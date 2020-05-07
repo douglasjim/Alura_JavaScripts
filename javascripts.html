@@ -1,0 +1,283 @@
+<meta charset="utf-8">
+
+<h1>MEu primeio teste</h1>
+
+
+<!--Meu primeiro script em java !! --> 
+
+<!-- Isso seria o pop-up que aparece logo quando a tela é iniciada -->
+<!-- Toda codificacao JavaScrip tem que estar entre a tag script alem disso sempre temos que colcoar ponto e virgula ; ao final de uma linha de codigos -->
+<!-- alert("Isso é javascript"); -->
+<!-- document.write serve para escrever no html pela tag javascript, podemos tambem fazer calculos dentro do document.write sem aspas -->
+<!-- var ano = 1900; ,assim estamos criando uma variavel igual o java , temos que criar a variavel ja recebendo um valor  -->
+
+<input/>
+<button>Compare Com meu segredo</button>
+
+
+
+
+<!--  -->
+
+<!--Logo abaixo aprendemos a pegar valores denro de um input !!!!!  -->
+<script> 
+
+
+	var segredos4 = [2,5,6,8,9]
+	//se eu escrever segredos4.length com essa linha de codigo irá retornar o valor de quantos elementos tem na array
+
+	var segredo = 5;
+	var segredo2 = 10;
+	var segredo3 = 15;
+	var input = document.querySelector("input");//dentro de aspas temos que colocar o mesmo nome da tag
+	//a funcao querySelector serve para pegar o valor que esta dentro de alguma tag especifica que iremos escolher
+	//teste.value //aqui estamos acessando o valor que esta dentro da variavel teste que criamos
+	input.focus(); //colocando esse codigo logo aqui estmaos dizendo que logo quando a pagina for carregada o input ja sera selecionado
+
+	function verifica(){
+
+		if (input.value == segredo || input.value == segredo2 || input.value == segredo3){
+		 	alert("VOCE ACCERTOU");
+		}else{
+		 	alert("VOCE ERROU !!!!" + segredo);
+		}
+
+		input.value = ""; //com essa linha de codigo estamos dizendo que o campo input apos o if e else irá receber um valor em branco e a caixa de entrada irá ficar vazia
+		// input.focus(); //aqui estamos dizendo que a caixa no qual irá receber um valor irá ficar selecionada invez de nos selecionar manualmente
+	}
+
+	var buttom = document.querySelector("button");
+	buttom.onclick = verifica2; //onclic seria no clicar em portugues , entao aqui estamos pegando o valor do button que no caso seria o click esse é o unico valor que tem na tag buttom
+	//com essa linha de codigo do button estamos dizendo que toda a funcao verifica esta dentro da variavel button que so sera acionada quando a tag button for clicada que é o caso do onclick ele é a funcao da tag quando for clicada
+
+	function verifica2(){
+
+		//segredos4.lenght estamso dizendo para que o i seja menor que q quantidade do tamanho dentro dessa array
+
+		var achou = false;
+
+		for (var i =0; i < segredos4.length; i++) {
+			if (input.value == segredos4[i]){
+			 	alert("VOCE ACCERTOU");
+			 	achou = true; //com essa variavel estamos dizendo que quando usuario acertar ira aparecer o acertou e ira fechar nao vai aparecer o VOCE ERROU
+			 	break;
+			}
+		}
+		input.value = "";
+		input.focus();
+
+		if (achou == false) { //quando usuario erra irá aparee apenas uma vez
+			alert("VOCE ERROU") 		
+		}
+		
+	}
+
+	function sorteia(){
+		return Math.round(Math.random() * 10);
+	}
+
+	var segredao = sorteia();
+
+	var arrays = []
+	arrays.push(7); //estamos dizendo que o numero 7 sera inserido dentro da varaivel de array
+	// push = empurrar
+
+	PulaLinha1();
+	PulaLinha1();
+	PulaLinha1();
+
+	
+	var ano = 1900; 
+	var nome = "Douglas";
+	
+	ano = 2021; //Apos ter criado a variavel podemos reatribuir um valor nessa variavel
+
+	document.write("Minha idade é");
+	document.write(" Nao sei Nao");
+	document.write("<br>")
+	document.write(ano," ",nome)
+
+	var PulaLinha = "<br>"
+
+	document.write("<br>")
+	var valor = 10/3;
+	document.write("ok" + Math.round(valor)); //com essas duas palavras novas nos arredondamos um valor para nao se printado como dizima periodica
+	document.write("<br>")
+	document.write("<br>")
+	document.write(PulaLinha)
+	document.write("OLhaaaaa " + ano + " Juntei " + valor) //juntar string com valores
+
+	// verbo = acao = nome de funcao
+	//toda funcao tem que ter um verbo e o verbo é uma acao logo toda funcao é uma acao entao toda funcao tem que ser um verbo
+	function PulaLinha1(){ //tudo que estiver dentro da chaves da funcao Pulalinha1 pertence a funcao
+		document.write("<br>");
+
+	}
+
+	PulaLinha1();
+	document.write("HELOO");
+	PulaLinha1();
+	PulaLinha1(); //funcao que sera executada que enta dentro da funcao
+	document.write("HELOO2");
+
+	function mostra(Douglas){
+		PulaLinha1();
+		document.write(Douglas);
+		PulaLinha1();
+		document.write("Agora a funcao")
+	}
+
+	mostra("testefunck")
+	document.write("<br>")
+	document.write("____________________________________________________________________________________");
+
+	function show(recebe){
+		PulaLinha1();
+		document.write(recebe);
+	}
+
+	show("Ele é show ");
+	
+
+	var peso = 100;
+	var altura = 1.80;
+	var IMC  = peso / (altura * altura); //sempre em um calculo temos que colocar o parentese assim ele irá saber por qual calculo comecar, que no caso é o que comecar oque esta entre parentese
+	
+	show("calculo final: " + Math.round(IMC)) //igual ao Java para printar um texto com variavei;
+
+	function imc(peso,altura){ //aqui estamos dizendo que a funcao irá receber dois valores
+
+		PulaLinha1();PulaLinha1(); //podemos colcoar na mesma linha so nao podemos esquecer do ponto e virgula
+		IMC = peso / (altura * altura)
+		document.write("Seu IMC é: " + IMC)
+		return IMC //relebrando return é tipo o print
+
+	}
+
+	//  NaN = NULO !!!!!
+	imc(90,1.90)
+	PulaLinha1();
+	document.write("____________________________________________________________________________________")
+	PulaLinha1();
+	var imc_cao = imc(100,2.00)
+	var imc_cat = imc(60,1.50)
+
+	PulaLinha1();
+	document.write("____________________________________________________________________________________")
+	PulaLinha1();
+
+	function mostra(frase) {
+		document.write(frase);
+	}
+
+	mostra("Opa tesntando a funcao");
+
+
+	//var altura = prompt("Informe sua altura") //esse codigo prompt seria o input do javascripts
+	//var peso = prompt("Informe seu peso")
+	//imc(altura,peso)
+
+	// var dado = parseInt(prompt("Digite seu numero")); //aqui estamos pegando o valor que o usuario for digitar e transformando-o em inteiro - int para que assim possamos fazer o calculo
+	// var dado1 = parseInt(prompt("Digite seuu segundo numero"));
+	// var total = dado + dado1;
+	// document.write(total);
+	// PulaLinha1();
+	// mostra("Seu total da conta deu: " + total);
+
+	// if (total > 50){
+	// 	mostra("seu total foi mairo que 50");
+	// 	PulaLinha1();
+	// }
+	// if (total == 30){
+	// 	mostra("Seu total foi mesma coisa que 30");
+	// }
+
+	// // && seria o and do javascripts
+	// // != diferente
+	// PulaLinha1();
+	// mostra("OPA TESTE 20");
+
+	// var nome = prompt("Digite seu nome");
+	// var idade = parseInt(prompt("Digite sua idade"));
+	// var acompanha = parseInt(prompt("Esta acompanhado?"));
+
+	// if (idade >= 18){
+	// 	mostra("Voce é maior pode entrar");
+	// }
+	// if (idade <= 14){
+	// 	mostra("Voce é de menor");
+	// }
+	// if (idade >= 15 && acompanha >= 1){
+	// 	mostra("Voce esta acompanhado pode entrar");
+	// }
+
+
+	// alert("VAMOS BRINCAR DE ADVINHA!");
+	// var numero = parseInt(prompt("Digite seu numero"));
+	// advinha = Math.round(Math.random() * 10 ); //assim conseguimos um numero inteiro inves de ser quebrado
+
+	// if (numero == advinha) {
+	// 	mostra("Advinhou !!!");
+	// }
+	// else{
+	// 	mostra("ERROU " + numero + "Numero advinhado é:" + advinha);
+	// }
+
+	PulaLinha1();
+	PulaLinha1();
+
+	// var AnoCopa = 1930;
+
+	// while (AnoCopa <= 2020){ //Assi cosneguimos printar todos os anos com + 4 ate o numero maximo que no caso é 2020
+	// 	AnoCopa = AnoCopa + 4;
+	// 	document.write(AnoCopa);
+	// 	PulaLinha1();
+	// }
+
+	// PulaLinha1();
+
+	// var Multiplicador = 0;
+
+	// while (Multiplicador <=10) {
+	// 	mostra(7 * Multiplicador);
+	// 	Multiplicador = Multiplicador + 1;
+	// 	PulaLinha1();
+	// }
+
+	// PulaLinha1();
+	// PulaLinha1();
+
+	// var Multiplicador2 = 0 
+
+	// for (var i = 0; i <= 10; i++) {
+	// 	mostra(7 * Multiplicador2);
+	// 	Multiplicador2 = Multiplicador2 + 1;
+	// 	PulaLinha1();
+	// }
+
+
+	// var totalFamiliares = parseInt(prompt("Quantidade de familia"));
+	// var numero = 1;
+
+
+	// while (numero <= totalFamiliares){
+	// 	var idade = parseInt(prompt("Digite sua idade: "));
+	// 	numero = numero + 1;
+	// 	var idade = idade + idade;
+	// }
+	// PulaLinha1
+	// mostra("Total da familia" + idade);
+
+	// for(var linha = 1; linha <= 3; linha++){ //futura arvore de natal
+	// 	for(var coluna =1; coluna <= 10; coluna++){
+	// 		document.write("*")
+	// 		PulaLinha1();
+	// 	}
+	// }
+
+
+
+
+
+
+</script>
