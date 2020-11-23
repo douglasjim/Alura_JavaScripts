@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ES</title>
+	<style type="text/css">
+		html{
+			background: black;
+			color: white;
+		}
+		.artigo{
+			color: green;
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			line-height: 200px;
+			text-align: center;
+		}
+		#prox{
+			color: red;
+			background-color: blue;
+			line-height: 200px;
+			text-align: center;
+		}
+
+	</style>
+</head>
+
+<!-- esse onload serve para quando a pagina carregar ele logo puxar a funcao tal, nesse caso a funcao carregar() -->
+<body onload="carregar()">
+	
+<p class="op">Hello world!</p>
+<div id="look">Olha a div</div><br>
+<p>Segundo Hello world!</p>
+<div class="artigo" id="opa" onclick="clicar()" onmouseenter="entrar()" onmouseout="saiu()" onmousedown="movimento()">OLha o artigo !!</div>
+
+<span id="prox">Proximo evento</span> <br>
+
+<input type="number" name="txt1" id="txt1">
+<input type="number" name="txt2" id="txt2">
+<input type="button" value="somar" onclick="somar()"></input><br>
+<span id="resultado">Resultado:</span><br>
+
+<input type="number" name="" id="ano" min="0">
+<p id="total">voce é </p>
+<input type="button" name="" id="verificar" onclick="nasc()" value="FICANOBUTTOn">
+<!-- relembrando o value fica no botao -->
+
+<br>
+<input type="number" name="" id="akuna">
+<input type="button" name="" id="lol" onclick="comerpizza()" value="akuna">
+<header>
+	<p>Titulo</p>
+</header>
+<section id="msg">
+	aqui vai aaparecer
+</section>
+<footer>
+	<p>&copy; Curso em video</p>
+	<div id="foto">
+		
+	</div>
+</footer>
+
+<!-- toda funcao pode receber ordem que no caso é o parametro, toda funcao tem ques er chamada para ser executada, toda funcao tem um codigo dentro e so irá ser executada quando chamamos ela em algum lugar -->
+
+<!-- NAN - not number = sem numero -->
+
+<!-- a classe esta sendo configurada para que a questo de verifcacao ams ate sendo reutilzidaa mpara a q auqetstao de ser reeenviada para o boot que esta sendo verificadao kas agte entao vamos enviar ar aa classe que pedindo a classe que vai sre de cnuracao ams ate ebtao vamos apenas manter a vefrifica cao do boot
+podemos criar uma array que recebe varis tio sde vaores mas tbm podemos usar o ts para que ele pssa recer um tipo apenas de valor assi nao quebranc  odigo em uma parte do codigo alem disso criando uam classe que ira receber os valores e adauconando is valores que eta e sendo configrado para que ele ira receber so colcoar a na array esse valor depos para pegar o valor  iremos penas resolver a questao que ser difecionado par a classe mpara eceber os valores que esta na classe dentro doa rray qtemos que pega a classe que eat adentro do arraye dentro desse array temos que indencficar o dcie que esta clocado a classe e temos que atribuir isso em uma varaivel para que possa mos oegar ov alor que ensta dentro da clase ee se quiser podemos alterarr filtando apentrando os valores da classe  -->
+
+
+<script type="text/javascript">
+	b = 0
+	
+	var vaga = []
+
+	let teste2 = {
+		"nome" : "Douglas",
+		idade: 40,
+		have: true,
+		money: 4.0,
+		boot2:0, 
+		boot(a){ //criando uma funcao dentro de um objeto
+			a = a + 1
+			this.boot2 = this.boot2 + a //aqui estamos pegando um variavel que tem dentro do objeto e adicionado um valor
+			return a
+		}
+	}
+
+	console.log(teste2.nome = "Mathias")
+	vaga.push(teste2)
+	var ko = vaga[0]
+	console.log(ko.nome)
+	console.log(ko.have)
+	console.log(ko.boot2)
+	console.log(ko.boot(10))
+	console.log(ko.boot2)
+	console.log(ko.boot(30))
+	console.log(ko.boot2)
+
+	//criando uma classe que ja recebe valores no parametro
+	class Study{
+		constructor(nome,idade,have,money,a){
+			this.nome = nome;
+			this.idade = idade;
+			this.have = have
+			this.money = money
+			this.a = a
+			this.booot = 0
+			
+		}
+
+			// booot = 0
+
+			boot(a){
+				a = a + 1
+				this.booot = this.booot + a
+				return booot
+			}
+	}
+
+	//aqui em baixo estamos acessando os valores quee esta dentro da classe
+	const Mylive = new Study("Douglas",40,true,4.0,10)
+	console.log(Mylive)
+	console.log(Mylive.nome)
+	console.log(Mylive.have)
+	console.log(Mylive.idade)
+	console.log(Mylive.money)
+	console.log(Mylive.a)
+	console.log(Mylive.booot = 10)
+
+	//colocando a variavel que tem a classe dentro da array
+	vaga.push(Mylive)
+	var look = vaga[1]
+	console.log(look.have)
+	//agora entendo do porque temos que usar o TS porque aqui podemos colocar valores iferentes dentro da variavel assim quebranado o codigo na hora de execucao
+
+	
+
+
+
+
+	function soma(a,b){
+		c = Number(a) + Number(b) //aqui estamos dizendo que os valores que irá ser inseridos na funcao, sera transformado em number, porque todo input que vem do usuario vem como string e temos que converter
+		
+		if (c >= 30) {
+			window.alert("maior que 30")
+			//ou podemos usar o return no lugar do alert que da na mesma
+		}else if(c <= 20){
+			window.alert("menor que 29")
+		}else{
+			window.alert("entre 21 e 29")
+		}
+
+		window.alert("o valor foi " +  c)
+		window.alert("Agora advinha o numero !")
+		
+		while(c != 10){
+			var c = window.prompt("digite o numero correto")		
+		}
+		window.alert("Parabens numero oculto era " + c)
+
+		window.alert("Vamos brincar de case")
+		var c = window.prompt("digite o numero do case")		
+		switch(c){
+			case "40": //aqui temos que prestar atencao porque como sabemos o input sempre vem como string se a gente for digitar apenas numero 40 ele irá esperar um valor do tipo number e nao string e por padrao o input vem sempre como string entao colocamos o numero em string como neste caso
+			window.alert("parabens o numero foi 40")
+			break
+		}
+
+		return "por hoje é so"
+	}
+
+	// console.log(soma(10,20))
+	// var a = window.prompt("digite um numero")
+	// var b = window.prompt("digite um numero")
+	// window.alert(soma(a,b))
+	// let func = soma(a,b)
+	// console.log(func)
+
+	//existe o for com in porem nao gostei
+	//vaga.push(10) //colocar um valor la dentro do array
+	//um otimo for usando numeros e if no meio quando achar o numero 5
+	for (var i = 0; vaga.length < 20; i++) {
+		vaga.push(i)
+		if (vaga[i] == 5) {
+			console.log("achei o 5")
+			vaga.push([5] + "opa")
+		}
+		console.log("tesando o array" + vaga[i])
+	}
+	console.log(vaga)
+	console.log(" Existe o numero 7 na posicao " + vaga.indexOf(7)) //indexOf() serve para mostrar se exsite  um numero que for esquisar dentro de um array
+	//usando tudo junto !!!
+	for (var i = 0; i <= 10; i++) {
+		console.log("Teste do for " + i)
+		if (i == 10) {
+			console.log("chegou no 10")
+		}else if(i == 8){
+			console.log("OPA chegou no 8")
+		}
+		a = 0
+		while(a <= 10){
+		 	a = a + 1
+		 	console.log("OLHA O WHILE AI")
+		 	break
+		 }
+		 switch(i){
+		 	case 9:
+		 	console.log("Usando CASE AGORA")
+		 	break
+		 }
+	}
+
+	// faca oque esta entro do do e depois vai para o while
+	//criando um while usando o do
+	do{
+		b = b + 1
+		console.log("Usando o DO " + b)
+	}while( b <= 10)
+
+	
+	//aqui um belo de um looping  usando while dentro de uam funcao que é chamado basicamente aqui conseguimos mostrar a quantiadde de likes que forao dado a cada clicada no botao
+	var ab = document.getElementById('akuna')
+	function comerpizza(){
+		while(b <= 10){
+			a = Number(ab.value)
+			b = b + a
+			console.log("Menor que 10 ${b}")
+			break
+		}
+		if (b == 10) {
+			console.log("saiu do loop")	
+		}
+		
+	}
+
+	var a = 0
+	while(a < 10){
+		a = a + 1
+		console.log("Numero: " + a)
+	}
+
+	function nasc(){
+		var data = new Date()
+		var ano2 = data.getFullYear()
+		var ano = document.getElementById('ano')
+		var total = document.getElementById('total')
+		total.innerHTML = 'ASKNAS'
+
+		if (ano.value.length == 0 || Number(ano.value) > ano2) {
+			window.alert("rever seus dados pf")
+		}else {
+			fix = ano2 - ano.value
+			total.innerHTML = "Sua idade é " + fix
+		}
+	}
+
+	//iremos resolver 	 u3tao de que vamos reoslver
+
+	function carregar(){
+		console.log("hello olha funco")
+		var texto = document.getElementById('msg')
+		var data = new Date()
+		var hora = data.getHours()
+		// var minuto = data.getMins() - ver como é minutos para pegar
+		texto.innerHTML = "ICOOOOOOOOOOOOO " + data + hora
+
+		if (hora >= 0 && hora <= 8) {
+			texto.innerHTML = "BOM DIAAAA" + hora
+			texto.style.color = 'red'
+			document.body.style.color = 'green'
+		}else if(hora >= 9 && hora <= 11){
+			texto.innerHTML = "boa tardeeeee"
+			// img.src = "foto1.png" - se tivesse uma foto iria mudar tbm
+			//porem la na tag tem que ter uma tag img com src de uma imagem as outras vai ser buscada pelo if aqui
+		}else{
+			texto.innerHTML = 'nao sei'
+		}
+
+		
+	}
+
+
+	//JAVASCRIPT DOM EVENT LIST !!!!!!!!!!! PESQUISAR !!!!!
+	//BIBLIOGRAFICA MDN PARA PESQUISAR OS EVENTOS !!!
+	var texto = document.getElementById('opa')
+
+	//texto.addEventListener("onmousemove", move) //adiciona uma funcao dentro da tag
+
+	function clicar(){
+		texto.style.color = 'red'
+	}
+	function entrar(){
+		texto.innerText = "entrou!"
+		texto.style.background = 'orange'
+	}
+	function saiu(){
+		texto.innerText = "SAIU!"
+		texto.style.background = "black"
+	}
+	function movimento(){
+		texto.innerText = "MOVIMENTANDO!!!"
+		texto.style.background = "purple"
+	}
+	function move(){
+		texto.style.background = "brown"
+	}
+
+	function somar(){
+		var a = document.getElementById('txt1')
+		var b = document.querySelector('input#txt2')
+		var resultado = document.querySelector('span#resultado')
+		var total = Number(a.value) + Number(b.value) //assim pegamos o valor que esta dentro do input
+		resultado.innerHTML = 'a soma total da conta é' + total
+
+		if (a <= 11) {
+			console.log("menor que 10")
+		}else{
+			console.log("maior que 10")
+		}
+
+		if(total >= 10){
+			window.alert("maior que 10 o valor é " + total)
+		}else{
+			window.alert("boa pergunta")
+		}
+		//novo jeito de usar if e else aqui em baixo 
+		total > 20?window.alert("Usando o novo if else , total:") + total:window.alert("FOi menor que 20")
+
+	}
+	a = 30
+
+	console.log("hello" + a)
+	if (a == 11){
+		console.log("igual a 11")
+	}else if(a == 14){
+		console.log("igual a 14 alem disso...")
+		if (a >= 12){
+			console.log("ë maior que 12")
+		}
+		else{
+			console.log("Menor que 12")
+		}
+		//esse console de baixo é executado apos sair do if e else ali de cima
+		console.log("SAiu da condicao anterior")
+	}else{
+		console.log("EITAAAAA")
+	}
+
+	//todo case que tiver dentro do switch temos que colocar o break é OBRIGATORIO !
+	switch(a){
+		case 20:
+			console.log("igual a 20")
+			break
+
+		case 30:
+			console.log("igual a 30")
+			break
+
+		default:
+		console.log("padrao")
+	}
+	
+
+
+	// var nome = window.prompt("Seu nome")
+	// window.alert("hello world!" + nome)	
+	// window.confirm("tem certeza?")
+
+	// var n1 = Number.parseInt(window.prompt("Seu nome")) converendo o valor em inteiro - int 
+	// Number.parseFloat() nessse caso convertendo o valor em float
+	//String(nome_da_variavel) - convertendo o valor da variavel em string
+	// "o aluno do ${nome} tem idade de ${idade} tirou nota de ${nota}" - isso seria basicamente a mesma coisa que concatenar usando o + / "o aluno" + nome "com idade" + idade / e assim pordiante
+	//s = "douglas"
+	//s.lenght = como ja sabemos ver a quantiadde de caracter na variavel
+	//s.toUpperCase e LowerCase = para deixar o valor em string em caixa alta ou baixa
+	//document.write("Seu nome é ${s}, tudo bem?") - novo jeito de juntar texto com valore de variavel
+	//document.write("Seu nome é ${s.toUpperCase}, tudo bem?") - assimpara deixar as letras tudi maiusculo
+	//n1 = 1545.5 / n1.tofixed(2) - serve para dexar as casas apos o ponto ou virgula arrendodados com 0
+	//n1.tofixed(2).replace('.' , ',') - aqui estamos trocando o ponto pela virgula 
+	// === com esse operador verificamos se o tipo dos valores ou variavel sao iguais ou nao, por exemplo a = 5 , b = "5" - a === b aqui o resultado é false porque o tipo de cada varaivel ;e diferente
+	//ternario = seria o switch case
+	//media > 7?"Aprovado":"Reprovado" / basicamente aqui seria mesma coisa que o switch caso, caso a respota seja sim printa aprovado se nao o reporvado usamos o ponto ? para caso seja true e : caso seja falso
+
+	//DOM famoso DOM ele é um objeto que dentro dele temos acesso a varias classes ou funcoes
+	//como por exemplo dentro do DOM existe o window e dentro dele existe varias classes ou funcoes
+	//isso se chaam meio que arvore DOM pq como dentro dele tem varias classes e tals
+	//dentro do window temos o location / document / history - exemplos de classes dentro do window
+
+	//window.document.body - olha a arvore do DOM aqui
+	document.write("teste do DOM <br>")//screvendo algo no html em qualquer lugar
+	var p1 = document.getElementsByTagName('p')[0]; //aqui é referente o primeira tag P
+	document.write("testando o new DOM <br>" +  p1.innerText) //temos tambem o innerHTML basicamente seria quase mesma coisa que o innerText so que mantem a formatacao, caso o texto esteja em negrito apos usar esse inner irá manter em negrito
+	var p2 = document.getElementsByTagName('p')[1];
+	p2.style.color = "red" //mudando a cor do conteuod da tag pelo JS
+	document.write("OLHA A COR <br>" +  p2.innerText);
+	var corpo = document.body;
+	//corpo.style.background = "red"  //com esse poder de conseguir mexer em qualquer coisa de um site utlizando JS é incrivel !!
+	var look = document.getElementById("look"); //pegando pelo ID
+	look.style.background = "blue";
+
+	//var artigo = document.getElementsByClassName('artigo'); //pegando pela classe
+	//artigo.style.background = "red";
+
+	var neww = window.document.querySelector("p.op"); //selecionando a classe ou ID pelo querysleector
+	neww.style.color = 'red';
+ 
+</script>
+</body>
+</html>
